@@ -21,18 +21,16 @@ public class Main_4_home extends Fragment {
         super.onCreate(savedInstanceState);
 
 
-        
-
         mFab = (FloatingActionButton) view.findViewById(R.id.fab);
 //        mFab.setOnClickListener(fabOnClick);
 
-        mFab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), Main_4_1_1.class);
-                startActivity(intent);
-            }
-        });
+//        mFab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getActivity(), Main_4_1_1.class);
+//                startActivity(intent);
+//            }
+//        });
 
 //        private final View.OnClickListener fabOnClick = new View.OnClickListener() {
 //            @Override
@@ -43,9 +41,18 @@ public class Main_4_home extends Fragment {
 //            }
 //        };
 
+        mFab.setOnClickListener(fab_onClick);
 
-        return inflater.inflate(R.layout.activity_4_home,container,false);
+        return view;
     }
 
+    private final View.OnClickListener fab_onClick = new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+
+            Intent myIntent = new Intent(getActivity(), Main_4_1_1.class);
+            startActivity(myIntent);//启动
+        }
+    };
 
 }
